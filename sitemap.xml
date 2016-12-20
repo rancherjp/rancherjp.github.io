@@ -2,37 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://rancherjp.github.io/</loc>
+    <loc>http://www.rancher.jp/</loc>
+    <lastmod>2016-12-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.rancher.jp/releasenote/v.1.2.1/</loc>
+    <lastmod>2016-12-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.rancher.jp/qa/</loc>
+    <lastmod>2016-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.rancher.jp/releasenote/v.1.2.0/</loc>
     <lastmod>2016-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rancherjp.github.io/release-announce/v.1.2.0/</loc>
-    <lastmod>2016-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rancherjp.github.io/docs/qsg/</loc>
+    <loc>http://www.rancher.jp/docs/qsg/</loc>
     <lastmod>2016-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rancherjp.github.io/blog/2016/10/27/01/</loc>
+    <loc>http://www.rancher.jp/blog/2016/10/27/01/</loc>
     <lastmod>2016-10-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rancherjp.github.io/content/2016/10/27/rancher-workshop-01/</loc>
+    <loc>http://www.rancher.jp/content/2016/10/27/rancher-workshop-01/</loc>
     <lastmod>2016-10-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rancherjp.github.io/content/2016/10/07/rancher-meetup-01/</loc>
+    <loc>http://www.rancher.jp/content/2016/10/07/rancher-meetup-01/</loc>
     <lastmod>2016-10-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://rancherjp.github.io/about/</loc>
+    <loc>http://www.rancher.jp/about/</loc>
   </url>
   
 </urlset>
