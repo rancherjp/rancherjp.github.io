@@ -336,18 +336,6 @@ Compassページ: &lt;a href=&#34;https://rancherjp.connpass.com/event/45768/&#3
     </item>
     
     <item>
-      <title>Rancher もくもく勉強会 #2 </title>
-      <link>http://www.rancher.jp/study/rancher-workshop-02/</link>
-      <pubDate>Tue, 27 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.rancher.jp/study/rancher-workshop-02/</guid>
-      <description>
-
-&lt;h1 id=&#34;準備中&#34;&gt;準備中&lt;/h1&gt;
-</description>
-    </item>
-    
-    <item>
       <title>リリース v1.2.2</title>
       <link>http://www.rancher.jp/releasenote/v.1.2.2/</link>
       <pubDate>Fri, 23 Dec 2016 00:00:00 +0000</pubDate>
@@ -500,6 +488,8 @@ Rancher Labs | Container registries you may have missed | Rancher Labs&lt;br /&g
       <guid>http://www.rancher.jp/releasenote/v.1.2.1/</guid>
       <description>
 
+&lt;h1 id=&#34;リリース-v1-2-1&#34;&gt;リリース v1.2.1&lt;/h1&gt;
+
 &lt;h2 id=&#34;バージョン&#34;&gt;バージョン&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -584,22 +574,14 @@ Rancher Labs | Container registries you may have missed | Rancher Labs&lt;br /&g
     </item>
     
     <item>
-      <title>Q And A</title>
-      <link>http://www.rancher.jp/qa/</link>
-      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.rancher.jp/qa/</guid>
-      <description>&lt;p&gt;・準備中&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>リリース v1.2.0</title>
       <link>http://www.rancher.jp/releasenote/v.1.2.0/</link>
       <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.rancher.jp/releasenote/v.1.2.0/</guid>
       <description>
+
+&lt;h1 id=&#34;リリース-v1-2-0&#34;&gt;リリース v1.2.0&lt;/h1&gt;
 
 &lt;h2 id=&#34;バージョン&#34;&gt;バージョン&lt;/h2&gt;
 
@@ -761,9 +743,11 @@ Rancherサーバーをアップグレードした後は、1.2環境に正常に�
 &lt;h3 id=&#34;rancherサーバーを動かす&#34;&gt;Rancherサーバーを動かす&lt;/h3&gt;
 
 &lt;p&gt;Rancherサーバーを起動するコマンドは1つだけです。コンテナを起動したら、コンテナのログを調べて、サーバが起動して動いているかを確認します。&lt;/p&gt;
-$ sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ sudo docker run -d --restart=unless-stopped -p 8080:8080 rancher/server
 # Rancherのログを表示
-$ sudo docker logs -f &lt;CONTAINER_ID&gt;
+$ sudo docker logs -f &amp;lt;CONTAINER_ID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Rancherサーバーの起動に数分おまちください。 &lt;code&gt;.... Startup Succeeded, Listening on port....&lt;/code&gt; が表示されたら、RancherのUIは起動して稼働中です。 ログのこの行が表示されたら、ほとんど設定は終了です。 この出力の後に追加のログが出力される可能性があるので、これが初期起動時のログの最後の行であるとは限りません。&lt;/p&gt;
 
@@ -804,7 +788,9 @@ $ sudo docker logs -f &lt;CONTAINER_ID&gt;
 &lt;h3 id=&#34;dockerのcliを直接使ってコンテナを作成する&#34;&gt;DockerのCLIを直接使ってコンテナを作成する&lt;/h3&gt;
 
 &lt;p&gt;Rancherは、コンテナがUIの外で作成されていてもホスト上のコンテナを表示できます。ホストのシェル端末からコンテナを作成してみます。&lt;/p&gt;
-$ docker run -d -it --name=second-container ubuntu:14.04.2
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -d -it --name=second-container ubuntu:14.04.2
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;UI上では、 &lt;strong&gt;&lt;em&gt;second-container&lt;/em&gt;&lt;/strong&gt; がホスト上にポップアップ表示されます。&lt;/p&gt;
 
@@ -813,7 +799,9 @@ $ docker run -d -it --name=second-container ubuntu:14.04.2
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;second-container&lt;/em&gt;&lt;/strong&gt; のIPアドレスを見ると、&lt;code&gt;10.42.*.*&lt;/code&gt; の範囲には&lt;strong&gt;ない&lt;/strong&gt;ことがわかります。 これは、Dockerデーモンによって割り当てられた通常のIPアドレスです。 CLIを使用してDockerコンテナを作成するとこのようになります。&lt;/p&gt;
 
 &lt;p&gt;CLIを使用してRancherのオバーレイネットワークからIPアドレスのDockerコンテナを作成するにはどうすればよいでしょうか？ しなければならないこと、コマンドにラベル(i.e. &lt;code&gt;io.rancher.container.network=true&lt;/code&gt;)を追加するだけで、Rancherは、このコンテナが&lt;code&gt;管理&lt;/code&gt;ネットワークに属しなければならないと認識します。&lt;/p&gt;
-$ docker run -d -it --label io.rancher.container.network=true ubuntu:14.04.2
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -d -it --label io.rancher.container.network=true ubuntu:14.04.2
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;マルチコンテナアプリケーションの作成&#34;&gt;マルチコンテナアプリケーションの作成&lt;/h3&gt;
 
@@ -848,7 +836,8 @@ $ docker run -d -it --label io.rancher.container.network=true ubuntu:14.04.2
 &lt;p&gt;前のセクションでは、ロードバランサを備えたLetsChatアプリケーションを作成しました。 Rancherで作成していた場合、スタックのドロップダウンメニューから &lt;strong&gt;Export Config&lt;/strong&gt; を選択して、UIから直接ファイルをダウンロードできます。 &lt;code&gt;docker-compose.yml&lt;/code&gt; と &lt;code&gt;rancher-compose.yml&lt;/code&gt; ファイルは次のようになります。&lt;/p&gt;
 
 &lt;h4 id=&#34;example-docker-compose-yml&#34;&gt;Example docker-compose.yml&lt;/h4&gt;
-version: &#39;2&#39;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;version: &#39;2&#39;
 services:
   letschatapplb:
     #If you only have 1 host and also created the host in the UI,
@@ -873,9 +862,11 @@ services:
     tty: true
     image: mongo
     stdin_open: true
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;example-rancher-compose-yml&#34;&gt;Example rancher-compose.yml&lt;/h4&gt;
-vversion: &#39;2&#39;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;vversion: &#39;2&#39;
 services:
   letschatapplb:
     scale: 1
@@ -899,21 +890,26 @@ services:
     scale: 2
   database:
     scale: 1
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;
 フッター右側にある &lt;strong&gt;Download CLI&lt;/strong&gt; をクリックして、RancherのUIからRancher CLIバイナリをダウンロードします。 Windows、Mac、Linux用のバイナリを提供しています。&lt;/p&gt;
 
 &lt;p&gt;Rancher CLIを使用してRancherでサービスを開始するには、いくつか環境変数を設定する必要があります。 Rancher UIで&lt;a href=&#34;{{site.baseurl}}/rancher/{{page.version}}/{{page.lang}}/api/api-keys/&#34;&gt;account API Key&lt;/a&gt;を作成します。 &lt;strong&gt;API&lt;/strong&gt; をクリックし、&lt;strong&gt;Add Account API Key&lt;/strong&gt; をクリックします。 ユーザー名 (アクセスキー) とパスワード (秘密キー) を保存します。 Rancher CLIに必要な次の環境変数を設定します: &lt;code&gt;RANCHER_URL&lt;/code&gt;、&lt;code&gt;RANCHER_ACCESS_KEY&lt;/code&gt; と &lt;code&gt;RANCHER_SECRET_KEY&lt;/code&gt;&lt;/p&gt;
-# Set the url that Rancher is on
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Set the url that Rancher is on
 $ export RANCHER_URL=http://server_ip:8080/
 # Set the access key, i.e. username
-$ export RANCHER_ACCESS_KEY=&lt;username_of_key&gt;
+$ export RANCHER_ACCESS_KEY=&amp;lt;username_of_key&amp;gt;
 # Set the secret key, i.e. password
-$ export RANCHER_SECRET_KEY=&lt;password_of_key&gt;
+$ export RANCHER_SECRET_KEY=&amp;lt;password_of_key&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;
 &lt;code&gt;docker-compose.yml&lt;/code&gt; と &lt;code&gt;rancher-compose.yml&lt;/code&gt; を保存したディレクトリに移動し、コマンドを実行します。&lt;/p&gt;
-$ rancher -p NewLetsChatApp up -d
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ rancher -p NewLetsChatApp up -d
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Rancherで &lt;strong&gt;NewLetsChatApp&lt;/strong&gt; という新しいスタックが作成され、サービスがすべて起動します&lt;/p&gt;
 </description>
@@ -921,11 +917,38 @@ $ rancher -p NewLetsChatApp up -d
     
     <item>
       <title>Rancher Event</title>
-      <link>http://www.rancher.jp/event/01/</link>
+      <link>http://www.rancher.jp/event-list/</link>
       <pubDate>Thu, 27 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.rancher.jp/event/01/</guid>
-      <description>&lt;p&gt;準備中 &amp;hellip;&lt;/p&gt;
+      <guid>http://www.rancher.jp/event-list/</guid>
+      <description>
+
+&lt;h1 id=&#34;rancher-meetup&#34;&gt;Rancher Meetup&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancherjp.connpass.com/event/45768/&#34;&gt;【会場変更 →渋谷】Rancher Meetup Tokyo #3 - connpass&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rancher.jp/content/2017/01/11/rancher-meetup-03/&#34;&gt;Rancher Meetup Tokyo #3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancherjp.connpass.com/event/44092/&#34;&gt;Rancher Meetup Tokyo #2 - connpass&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancherjp.connpass.com/event/46208/&#34;&gt;Rancher Meetup Tokyo #2 - 懇親会 - connpass&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancherjp.connpass.com/event/40326/&#34;&gt;Rancher Meetup Tokyo #1 - connpass&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rancher.jp/content/2016/10/07/rancher-meetup-01/&#34;&gt;Rancher Meetup Tokyo #1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;rancher-もくもく勉強会&#34;&gt;Rancher もくもく勉強会&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancherjp.connpass.com/event/47871/&#34;&gt;Rancher もくもく勉強会 #2 - connpass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://connpass.com/event/41997/&#34;&gt;Rancher もくもく勉強会 #1 - connpass&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -1108,6 +1131,218 @@ VMで動かす場合は、ネットワークが注意&lt;/p&gt;
 &lt;h2 id=&#34;参考サイト&#34;&gt;参考サイト&lt;/h2&gt;
 
 &lt;p&gt;(&lt;a href=&#34;http://connpass.com/event/40326/&#34;&gt;http://connpass.com/event/40326/&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Q And A</title>
+      <link>http://www.rancher.jp/qa/</link>
+      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/qa/</guid>
+      <description>
+
+&lt;h1 id=&#34;このページについて&#34;&gt;このページについて&lt;/h1&gt;
+
+&lt;p&gt;Rancher JP では皆様に Rancher, Rancher&amp;gt;OS をご使用していただいて疑問や困った事などを SlackのChannel &lt;code&gt;#qa&lt;/code&gt; にて議論・検討をしています。&lt;br /&gt;
+その中で、一定の情報になった物を掲載していきます。&lt;/p&gt;
+
+&lt;p&gt;質問・疑問などがある方は  &lt;a href=&#34;https://rancherjp.herokuapp.com/&#34;&gt;Join rancherjp on Slack!&lt;/a&gt; より 参加してみてください。&lt;/p&gt;
+
+&lt;h1 id=&#34;rancheros&#34;&gt;RancherOS&lt;/h1&gt;
+
+&lt;h2 id=&#34;ssh鍵を設定したい&#34;&gt;SSH鍵を設定したい&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ナレッジ: FoxBoxsnet(@FoxBoxsnet)&lt;br /&gt;
+RancherOS では、SSH公開鍵暗号方式でのログインが使用できます。&lt;br /&gt;
+&lt;code&gt;cloud-config&lt;/code&gt; に記述します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;  #cloud-config
+  ssh_authorized_keys:
+    - ssh-rsa AAA...ZZZ example1@rancher
+    - ssh-rsa BBB...ZZZ example2@rancher
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/configuration/ssh-keys/&#34;&gt;SSH Keys in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ネットワーク設定&#34;&gt;ネットワーク設定&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ナレッジ: FoxBoxsnet(@FoxBoxsnet)&lt;/p&gt;
+
+&lt;p&gt;RancherOS ではデフォルトでDHCPによりIPアドレスを決定しますが、固定したい場合もあるかと思います。&lt;br /&gt;
+ここでは下記のように設定してみました。&lt;br /&gt;
+適宜書き換えてください。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;interface&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;eth0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;DNS&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;172.18.1.254&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;IP Address&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;172.18.1.1 /24&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Gate Way&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;172.18.1.254&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#cloud-config
+rancher:
+  network:
+    dns:
+      nameservers:
+      - 172.18.1.254
+    interfaces:
+      eth0:
+        address: 172.18.1.1/24
+        gateway: 172.18.1.254
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/networking/interfaces/&#34;&gt;Configuring Network Interfaces in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/networking/dns/&#34;&gt;Configuring DNS in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;rancheros-を-proxy-配下で利用する&#34;&gt;RancherOS を Proxy 配下で利用する&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ナレッジ: FoxBoxsnet(@FoxBoxsnet)&lt;/p&gt;
+
+&lt;p&gt;RancherOSで Proxy 配下で DockerImage をダウンロードできるように設定します。&lt;br /&gt;
+&lt;strong&gt;この設定は ホストを再起動するまで適用されません&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#cloud-config
+rancher:
+  network:
+    http_proxy: https://myproxy.example.com
+    https_proxy: https://myproxy.example.com
+    no_proxy: localhost,127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;http_proxy&lt;/code&gt;, &lt;code&gt;https_proxy&lt;/code&gt; にポート番号が必要な場合は &lt;code&gt;&amp;lt;ホスト名&amp;gt;:&amp;lt;ポート番号&amp;gt;&lt;/code&gt; で可能かと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#cloud-config
+rancher:
+  network:
+    http_proxy: https://myproxy.example.com:8080
+    https_proxy: https://myproxy.example.com:8080
+    no_proxy: localhost,127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/networking/proxy-settings/&#34;&gt;Configuring Proxy Settings in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;rancheros-のホスト名-hostname-設定&#34;&gt;RancherOS のホスト名(HostName) 設定&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ナレッジ: FoxBoxsnet(@FoxBoxsnet)&lt;/p&gt;
+
+&lt;p&gt;RancherOS はデフォルトでは &lt;code&gt;rancher&lt;/code&gt; に設定されています。&lt;br /&gt;
+運用上、不便のためホスト名を設定します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#cloud-config
+hostname: rancher-host01.local
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/configuration/hostname/&#34;&gt;Setting the Hostname in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ntpサーバーを設定したい&#34;&gt;NTPサーバーを設定したい&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ナレッジ: FoxBoxsnet(@FoxBoxsnet)&lt;/p&gt;
+
+&lt;p&gt;RancherOS でNTPサーバーを任意設定します。
+今回は、日本国内の stratum1サーバー NICT(情報通信研究機構) のサーバーからNTPを受信するように設定しました。&lt;br /&gt;
+Linux標準の &lt;code&gt;/etc/ntpd.conf&lt;/code&gt; とほぼ同じ記述で問題無いと思われます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;  #cloud-config
+  write_files:
+    - path: /etc/ntp.conf
+      permissions: 0644
+      content: |
+          tinker panic 0
+          default kod nomodify notrap nopeer noquery
+          restrict -6 default kod nomodify notrap nopeer noquery
+
+          restrict 127.0.0.1
+          restrict -6 ::1
+
+          restrict 133.243.238.163 mask 255.255.255.255 nomodify notrap noquery
+          restrict 133.243.238.164 mask 255.255.255.255 nomodify notrap noquery
+          restrict 133.243.238.243 mask 255.255.255.255 nomodify notrap noquery
+          restrict 133.243.238.244 mask 255.255.255.255 nomodify notrap noquery
+
+          server ntp.nict.jp
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/configuration/write-files/&#34;&gt;Writing Files in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/system-services/built-in-system-services/&#34;&gt;Built-in System Services in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;rancheros-で-timezone-を-jst-に変更したい&#34;&gt;RancherOS で TimeZone を JST に変更したい&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;質問: FoxBoxsnet(@FoxBoxsnet)&lt;/p&gt;
+
+&lt;p&gt;RancherOS デフォルトの設定は、 TimeZoneは &lt;code&gt;UTC&lt;/code&gt; に設定されます。&lt;br /&gt;
+コンソールのTimeZoneをJST(Japan Standard Time)に設定したい&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;#cloud-config
+rancher:
+  services:
+    console:
+      environment:
+        TZ: &#39;JST-9&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/system-services/adding-system-services/&#34;&gt;Adding System Services in RancherOS&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.rancher.com/os/system-services/built-in-system-services/&#34;&gt;Built-in System Services in RancherOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
