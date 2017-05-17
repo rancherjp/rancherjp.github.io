@@ -52,7 +52,7 @@
   </url>
   
   <url>
-    <loc>http://www.rancher.jp/traslated/container-registries-might-missed-ja/</loc>
+    <loc>http://www.rancher.jp/translated/container-registries-might-missed-ja/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -269,6 +269,12 @@
   </url>
   
   <url>
+    <loc>http://www.rancher.jp/translated/</loc>
+    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.rancher.jp/tags/traslated/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -276,12 +282,6 @@
   
   <url>
     <loc>http://www.rancher.jp/categories/traslated/</loc>
-    <lastmod>2016-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.rancher.jp/traslated/</loc>
     <lastmod>2016-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

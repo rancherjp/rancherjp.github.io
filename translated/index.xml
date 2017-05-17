@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Traslated on Rancher JP</title>
-    <link>http://www.rancher.jp/categories/traslated/</link>
-    <description>Recent content in Traslated on Rancher JP</description>
+    <title>Translateds on Rancher JP</title>
+    <link>http://www.rancher.jp/translated/</link>
+    <description>Recent content in Translateds on Rancher JP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>© 2016 Rancher JP</copyright>
     <lastBuildDate>Thu, 22 Dec 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.rancher.jp/categories/traslated/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.rancher.jp/translated/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
