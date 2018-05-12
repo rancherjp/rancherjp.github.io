@@ -6,11 +6,29 @@
     <description>Recent content in Releasenotes on Rancher JP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <copyright>© 2016 Rancher JP</copyright>
-    <lastBuildDate>Sat, 02 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <copyright>© 2018 Rancher JP</copyright>
+    <lastBuildDate>Sat, 12 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.rancher.jp/releasenote/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>リリース v2.0.0</title>
+      <link>http://www.rancher.jp/releasenote/v2.0.0/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/releasenote/v2.0.0/</guid>
+      <description>Release v2.0.0 数か月に渡る開発期間を経て、私たちはついに Rancher 2.0 をユーザに提供できるようになりました。 以前のバージョンの Rancher バージョン 1.6 は、 Docker 上に作られたコ</description>
+    </item>
+    
+    <item>
+      <title>リリース v2.0.0 テクニカルプレビュー</title>
+      <link>http://www.rancher.jp/releasenote/v2.0.0-%E3%83%86%E3%82%AF%E3%83%8B%E3%82%AB%E3%83%AB%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</link>
+      <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/releasenote/v2.0.0-%E3%83%86%E3%82%AF%E3%83%8B%E3%82%AB%E3%83%AB%E3%83%97%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</guid>
+      <description>リリース v2.0.0 テクニカルプレビュー Rancher 2.0のテクニカルプレビューが利用可能になったことをお知らせします。 このリリースは、我々のエンジニアチームが</description>
+    </item>
     
     <item>
       <title>リリース v1.6.8</title>

@@ -6,7 +6,7 @@
     <description>Recent content in Archives on Rancher JP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <copyright>© 2016 Rancher JP</copyright>
+    <copyright>© 2018 Rancher JP</copyright>
     <lastBuildDate>Fri, 23 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.rancher.jp/archives/index.xml" rel="self" type="application/rss+xml" />
@@ -51,7 +51,7 @@
     <item>
       <title>2017</title>
       <link>http://www.rancher.jp/archives/2017/</link>
-      <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.rancher.jp/archives/2017/</guid>
       <description></description>
@@ -117,6 +117,33 @@
       <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.rancher.jp/archives/2017/09/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2017/11</title>
+      <link>http://www.rancher.jp/archives/2017/11/</link>
+      <pubDate>Sat, 11 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/archives/2017/11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018</title>
+      <link>http://www.rancher.jp/archives/2018/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/archives/2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2018/05</title>
+      <link>http://www.rancher.jp/archives/2018/05/</link>
+      <pubDate>Sat, 12 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.rancher.jp/archives/2018/05/</guid>
       <description></description>
     </item>
     
